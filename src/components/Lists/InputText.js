@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InputTextValidation from "./InputTextValidation";
 import InputChar from "./InputChar";
+import "./inputText.css";
 
 class InputText extends Component {
   state = {
@@ -38,6 +39,14 @@ class InputText extends Component {
       );
     });
 
+    let textStyle = [];
+
+    if (this.state.inputLength > 10) {
+      textStyle.push("red");
+    }
+    if (this.state.inputLength > 20) {
+      textStyle.push("bold");
+    }
     return (
       <div className="App">
         <div>
@@ -46,7 +55,9 @@ class InputText extends Component {
             value={this.state.inputText}
             onChange={this.inputChangeHandler}
           />
-          <p>Length: {this.state.inputLength}</p>
+          <p className={textStyle.join(" ")}>
+            Length: {this.state.inputLength}
+          </p>
           <InputTextValidation text={this.state.inputText} />
           {inputChars}
         </div>
