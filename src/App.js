@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import UserInput from "./components/UserInput";
-import UserOutput from "./components/UserOutput";
-import UserCounter from "./components/UserCounter";
+import UserInput from "./components/basics/UserInput";
+import UserOutput from "./components/basics/UserOutput";
+import UserCounter from "./components/basics/UserCounter";
+import InputText from "./components/Lists/InputText";
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
         <UserInput text={this.state.input} update={this.inputUpdateHandler} />
         <UserOutput text={this.state.input} />
         <UserCounter />
+        <InputText />
       </div>
     );
   }
