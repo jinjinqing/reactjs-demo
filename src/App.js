@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import classes from "./App.css";
 import UserInput from "./components/basics/UserInput";
 import UserOutput from "./components/basics/UserOutput";
 import UserCounter from "./components/basics/UserCounter";
@@ -18,8 +18,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1 className="App-header">This is a React Demo!!</h1>
+      <div className={classes.App}>
+        <h1 className={classes.AppHeader}>This is a React Demo!!</h1>
         <UserInput text={this.state.input} update={this.inputUpdateHandler} />
         <UserOutput text={this.state.input} />
         <UserCounter />
